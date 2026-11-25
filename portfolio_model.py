@@ -58,7 +58,7 @@ class OilGasPortfolioRecommender:
         test_size: float = 0.20,
         random_state: int = 42,
         threshold_pct: float = 1.5,
-        output_dir: Path | str | None = None,
+        output_dir: Path | str = "figures",
     ) -> None:
         """Готовит выборку с лагом CLOSE_LAG1 и One-Hot признаками."""
         self.test_size = test_size
@@ -143,12 +143,12 @@ class OilGasPortfolioRecommender:
     @classmethod
     def from_sources(
         cls,
-        db_path: Path | str = "database.db",
+        db_path: Path | str = "main_database.db",
         csv_fallback: Path | str = "main_dataset.csv",
         test_size: float = 0.20,
         random_state: int = 42,
         threshold_pct: float = 1.5,
-        output_dir: Path | str | None = None,
+        output_dir: Path | str = "figures",
     ) -> "OilGasPortfolioRecommender":
         """Создаёт модель с загрузкой из .db и резервом на .csv."""
         dataframe = cls.load_data_source(db_path=db_path, csv_fallback=csv_fallback)
