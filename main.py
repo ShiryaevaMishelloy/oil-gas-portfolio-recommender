@@ -8,7 +8,7 @@ from visualizer import MarketVisualizer
 
 def run_pipeline(
     collect_fresh_data: bool = False,
-    db_path: Path | str = "database.db",
+    db_path: Path | str = "main_database.db",
     csv_path: Path | str = "main_dataset.csv",
     figures_dir: Path | str = "figures",
 ) -> None:

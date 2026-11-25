@@ -474,7 +474,7 @@ class MarketDataCollector:
 
 
 if __name__ == "__main__":
-    collector = MarketDataCollector()
-    dataset = collector.build_dataset()
-    print(f"\nДатасет сохранён: {collector.output_file}")
-    collector.print_report_tables(dataset)
+    #collector = MarketDataCollector()
+    #dataset = collector.build_dataset()
+    #print(f"\nДатасет сохранён: {collector.output_file}")
+    #collector.print_report_tables(dataset)
