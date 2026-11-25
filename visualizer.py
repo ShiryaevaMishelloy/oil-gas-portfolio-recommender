@@ -62,7 +62,7 @@ class MarketVisualizer:
     def __init__(
         self,
         df: pd.DataFrame,
-        output_dir: Path | str | None = None,
+        output_dir: Path | str = "figures",
         dpi: int = 300,
     ) -> None:
         """Подготавливает датафрейм и настройки визуализации."""
@@ -109,9 +109,9 @@ class MarketVisualizer:
     @classmethod
     def from_sources(
         cls,
-        db_path: Path | str = "database.db",
+        db_path: Path | str = "main_database.db",
         csv_fallback: Path | str = "main_dataset.csv",
-        output_dir: Path | str | None = None,
+        output_dir: Path | str = "figures",
         dpi: int = 300,
     ) -> "MarketVisualizer":
         """Создаёт визуализатор с загрузкой из .db и резервом на .csv."""
