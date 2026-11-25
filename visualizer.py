@@ -334,11 +334,11 @@ class MarketVisualizer:
         volatility = (
             self.df.groupby("SECID")["DAILY_RETURN_PCT"]
             .std()
-            .reindex(self.COMPANY_ORDER)
+            .sort_values(ascending=True)
         )
 
         fig, ax = plt.subplots(figsize=(9, 5))
-        gradient = plt.cm.PuRd(np.linspace(0.25, 0.85, len(volatility)))
+        gradient = plt.cm.Purples(np.linspace(0.25, 0.85, len(volatility)))
         bars = ax.bar(
             [self.COMPANY_NAMES[x] for x in volatility.index],
             volatility.values,
